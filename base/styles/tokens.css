@@ -1,0 +1,79 @@
+/* 디자인 토큰 - CSS 변수로 정의 */
+:root {
+  /* 색상 - 브랜드 */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+
+  /* 색상 - 시멘틱 */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #06b6d4;
+
+  /* 색상 - 중립 */
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-500: #6b7280;
+  --color-neutral-700: #374151;
+  --color-neutral-900: #111827;
+
+  /* 배경/표면 */
+  --color-background: #ffffff;
+  --color-surface: #f9fafb;
+  --color-border: #e5e7eb;
+
+  /* 간격 (8pt 기준) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* 폰트 패밀리 */
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* 폰트 크기 */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+
+  /* 라인 하이트 */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-loose: 1.75;
+
+  /* 둥글기 */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* 그림자 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 다크 모드 (선택적으로 활용) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0f172a;
+    --color-surface: #1e293b;
+    --color-border: #334155;
+  }
+}

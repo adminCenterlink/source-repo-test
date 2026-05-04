@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/types/*": ["./base/types/*"],
+      "@/utils/*": ["./base/utils/*"],
+      "@/lib/*": ["./base/lib/*"],
+      "@/components/*": ["./components/*"],
+      "@/views/*": ["./views/*"]
+    }
+  },
+  "include": ["base/**/*", "components/**/*", "views/**/*"],
+  "exclude": ["node_modules", "cli", "templates"]
+}

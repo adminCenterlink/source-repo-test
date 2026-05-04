@@ -1,0 +1,13 @@
+{
+  "name": "cp-source-registry-source",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CP Source Registry - 소스 모듈 저장소",
+  "scripts": {
+    "deps:check": "dependency-cruiser --config .dependency-cruiser.cjs base components pages"
+  },
+  "devDependencies": {
+    "dependency-cruiser": "^16.0.0",
+    "typescript": "^5.6.0"
+  }
+}

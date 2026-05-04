@@ -1,0 +1,250 @@
+{
+  "name": "cp-source-registry",
+  "version": "1.1.0",
+  "categories": {
+    "consult": {
+      "description": "상담 업무 관련 화면"
+    },
+    "evaluation": {
+      "description": "평가관리 관련 화면"
+    }
+  },
+  "modules": {
+    "base/styles": {
+      "name": "base/styles",
+      "layer": 0,
+      "category": null,
+      "description": "디자인 토큰 + 글로벌 스타일",
+      "files": ["base/styles/tokens.css", "base/styles/globals.css"],
+      "registryDependencies": [],
+      "npmDependencies": {},
+      "tags": ["styles", "tokens"],
+      "customizationLevel": "high"
+    },
+    "base/types": {
+      "name": "base/types",
+      "layer": 0,
+      "category": null,
+      "description": "공통 타입 (ApiResponse, PaginatedResponse 등)",
+      "files": ["base/types/common.ts", "base/types/api.ts"],
+      "registryDependencies": [],
+      "npmDependencies": {},
+      "tags": ["types"],
+      "customizationLevel": "low"
+    },
+    "base/utils": {
+      "name": "base/utils",
+      "layer": 0,
+      "category": null,
+      "description": "공통 유틸 (cn, format, validation)",
+      "files": [
+        "base/utils/cn.ts",
+        "base/utils/format.ts",
+        "base/utils/validation.ts"
+      ],
+      "registryDependencies": [],
+      "npmDependencies": {
+        "clsx": "^2.1.0",
+        "tailwind-merge": "^2.5.0"
+      },
+      "tags": ["utils"],
+      "customizationLevel": "low"
+    },
+    "base/lib": {
+      "name": "base/lib",
+      "layer": 0,
+      "category": null,
+      "description": "API 클라이언트 + 인증 유틸",
+      "files": ["base/lib/auth.ts", "base/lib/api-client.ts"],
+      "registryDependencies": ["base/types"],
+      "npmDependencies": {
+        "axios": "^1.7.0"
+      },
+      "tags": ["http", "auth"],
+      "customizationLevel": "medium"
+    },
+    "components/ui/label": {
+      "name": "components/ui/label",
+      "layer": 1,
+      "category": null,
+      "description": "라벨 - shadcn/ui (@radix-ui/react-label 기반)",
+      "files": ["components/ui/label/label.tsx", "components/ui/label/index.ts"],
+      "registryDependencies": ["base/utils"],
+      "npmDependencies": {
+        "@radix-ui/react-label": "^2.1.0",
+        "class-variance-authority": "^0.7.0"
+      },
+      "tags": ["ui", "atom", "form"],
+      "customizationLevel": "low"
+    },
+    "components/ui/badge": {
+      "name": "components/ui/badge",
+      "layer": 1,
+      "category": null,
+      "description": "뱃지 - shadcn/ui (cva 기반)",
+      "files": ["components/ui/badge/badge.tsx", "components/ui/badge/index.ts"],
+      "registryDependencies": ["base/utils"],
+      "npmDependencies": {
+        "class-variance-authority": "^0.7.0"
+      },
+      "tags": ["ui", "atom"],
+      "customizationLevel": "low"
+    },
+    "components/ui/button": {
+      "name": "components/ui/button",
+      "layer": 1,
+      "category": null,
+      "description": "버튼 - shadcn/ui (cva + @radix-ui/react-slot 기반)",
+      "files": ["components/ui/button/button.tsx", "components/ui/button/index.ts"],
+      "registryDependencies": ["base/utils"],
+      "npmDependencies": {
+        "@radix-ui/react-slot": "^1.1.0",
+        "class-variance-authority": "^0.7.0"
+      },
+      "tags": ["ui", "atom"],
+      "customizationLevel": "medium"
+    },
+    "components/ui/input": {
+      "name": "components/ui/input",
+      "layer": 1,
+      "category": null,
+      "description": "입력 필드 - shadcn/ui (@radix-ui/react-label 기반 label 래퍼 포함)",
+      "files": ["components/ui/input/input.tsx", "components/ui/input/index.ts"],
+      "registryDependencies": ["base/utils", "components/ui/label"],
+      "npmDependencies": {},
+      "tags": ["ui", "atom", "form"],
+      "customizationLevel": "medium"
+    },
+    "components/ui/data-table": {
+      "name": "components/ui/data-table",
+      "layer": 1,
+      "category": null,
+      "description": "제네릭 데이터 테이블 (shadcn/ui + @tanstack/react-table)",
+      "files": [
+        "components/ui/data-table/data-table.tsx",
+        "components/ui/data-table/index.ts"
+      ],
+      "registryDependencies": ["base/utils", "base/types"],
+      "npmDependencies": {
+        "@tanstack/react-table": "^8.20.0"
+      },
+      "tags": ["ui", "atom", "table"],
+      "customizationLevel": "medium"
+    },
+    "components/domain/customer": {
+      "name": "components/domain/customer",
+      "layer": 2,
+      "category": null,
+      "description": "고객 정보 카드 - 도메인 컴포넌트",
+      "files": [
+        "components/domain/customer/customer.tsx",
+        "components/domain/customer/index.ts"
+      ],
+      "registryDependencies": ["base/utils"],
+      "npmDependencies": {},
+      "tags": ["domain", "customer"],
+      "customizationLevel": "medium"
+    },
+    "components/domain/search-box": {
+      "name": "components/domain/search-box",
+      "layer": 2,
+      "category": null,
+      "description": "검색 조건 박스 - 도메인 컴포넌트",
+      "files": [
+        "components/domain/search-box/search-box.tsx",
+        "components/domain/search-box/index.ts"
+      ],
+      "registryDependencies": ["base/utils", "components/ui/button"],
+      "npmDependencies": {},
+      "tags": ["domain", "search"],
+      "customizationLevel": "medium"
+    },
+    "views/consult/consult-main": {
+      "name": "views/consult/consult-main",
+      "layer": 3,
+      "category": "consult",
+      "description": "상담 메인 화면 (요약 + 최근 상담)",
+      "files": [
+        "views/consult/consult-main/page.tsx",
+        "views/consult/consult-main/types.ts",
+        "views/consult/consult-main/api.ts",
+        "views/consult/consult-main/hooks/use-consult-main.ts"
+      ],
+      "registryDependencies": [
+        "base/lib",
+        "base/utils",
+        "base/types",
+        "components/domain/customer"
+      ],
+      "npmDependencies": {},
+      "tags": ["page", "consult", "dashboard"],
+      "customizationLevel": "high"
+    },
+    "views/consult/consult-list": {
+      "name": "views/consult/consult-list",
+      "layer": 3,
+      "category": "consult",
+      "description": "상담 목록 화면 (검색 + 데이터테이블 + 페이지네이션)",
+      "files": [
+        "views/consult/consult-list/page.tsx",
+        "views/consult/consult-list/types.ts",
+        "views/consult/consult-list/schema.ts",
+        "views/consult/consult-list/api.ts",
+        "views/consult/consult-list/hooks/use-consult-list.ts",
+        "views/consult/consult-list/components/consult-list-detail.tsx"
+      ],
+      "registryDependencies": [
+        "base/lib",
+        "base/utils",
+        "base/types",
+        "components/ui/button",
+        "components/ui/input",
+        "components/ui/data-table",
+        "components/ui/badge",
+        "components/domain/search-box"
+      ],
+      "npmDependencies": {
+        "zod": "^3.23.0"
+      },
+      "tags": ["page", "consult", "list"],
+      "customizationLevel": "high"
+    },
+    "views/consult/consult-main-v2": {
+      "name": "views/consult/consult-main-v2",
+      "layer": 3,
+      "category": "consult",
+      "description": "상담 메인 v2 (KPI 카드 강조)",
+      "files": [
+        "views/consult/consult-main-v2/page.tsx",
+        "views/consult/consult-main-v2/types.ts",
+        "views/consult/consult-main-v2/api.ts",
+        "views/consult/consult-main-v2/hooks/use-consult-main-v2.ts"
+      ],
+      "registryDependencies": ["base/lib", "base/utils", "base/types"],
+      "npmDependencies": {},
+      "tags": ["page", "consult", "dashboard", "variant"],
+      "customizationLevel": "high"
+    },
+    "views/evaluation/qa-manager": {
+      "name": "views/evaluation/qa-manager",
+      "layer": 3,
+      "category": "evaluation",
+      "description": "QA 관리 화면 (평가 기준 + 결과 리스트)",
+      "files": [
+        "views/evaluation/qa-manager/page.tsx",
+        "views/evaluation/qa-manager/types.ts",
+        "views/evaluation/qa-manager/api.ts"
+      ],
+      "registryDependencies": [
+        "base/lib",
+        "base/utils",
+        "base/types",
+        "components/ui/button",
+        "components/ui/data-table"
+      ],
+      "npmDependencies": {},
+      "tags": ["page", "evaluation", "qa"],
+      "customizationLevel": "high"
+    }
+  }
+}
