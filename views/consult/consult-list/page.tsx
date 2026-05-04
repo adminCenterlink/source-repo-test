@@ -97,7 +97,7 @@ export default function ConsultListPage() {
     <div className="flex flex-col gap-4 p-6">
       <header>
         <h1 className="text-2xl font-bold text-gray-900">상담 목록</h1>
-        <p className="text-sm text-gray-500">조건을 입력하여 상담 이력을 조회합니다.</p>
+        <p className="text-sm text-gray-500">조건을 입력하여 상담 이력을 조회합니다. test</p>
         {error && (
           <p className="mt-2 text-xs text-amber-600">
             (백엔드 미연결 - 더미 데이터로 표시 중)
